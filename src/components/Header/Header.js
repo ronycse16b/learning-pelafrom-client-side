@@ -1,14 +1,24 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import React from 'react';
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const { user, logOut } = useContext(AuthContext);
+    const handelLogout = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.error(error))
+
+    }
+
     return (
         <div className="bg-white  border-b-4 shadow-md  border-red-600">
             <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
                 <div className="relative flex items-center justify-between">
                     <Link to='/'
-                        href="/"
+
                         aria-label="Company"
                         title="Company"
                         className="inline-flex items-center"
@@ -35,7 +45,7 @@ const Header = () => {
                     <ul className="flex items-center hidden space-x-8 lg:flex">
                         <li>
                             <Link
-                                 to='/home'
+                                to='/home'
                                 aria-label="Our product"
                                 title="Our product"
                                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
@@ -44,72 +54,80 @@ const Header = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link to='/all-topices'
-                                href="/"
+                            <Link to='/course-category'
+
                                 aria-label="Our product"
                                 title="Our product"
                                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                             >
-                                All Course 
+                                All Course
                             </Link>
                         </li>
                         <li>
-                            <a
-                                href="/"
+                            <Link
+
                                 aria-label="Product pricing"
                                 title="Product pricing"
                                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                             >
                                 Blog
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a
-                                href="/"
+                            <Link
+
                                 aria-label="About us"
                                 title="About us"
                                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                             >
-                               F & Q
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="/"
-                                aria-label="About us"
-                                title="About us"
-                                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                            >
-                                About us
-                            </a>
-                        </li>
-
-                        <li>
-                            <a
-
-                            > <img alt="" className="w-10 h-10 rounded-full ring-2 ring-offset-4 dark:bg-gray-500 ring-violet-400 ring-offset-gray-800" src="https://source.unsplash.com/40x40/?portrait?1" />
-
-                            </a>
-                        </li>
-                        <li>
-                            <Link to='/register'
-                                href="/"
-                                className="inline-flex items-center justify-center h-10 px-6 font-medium tracking-wide bg-red-500 text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                                aria-label="Sign up"
-                                title="Sign up"
-                            >
-                                Register
+                                F & Q
                             </Link>
                         </li>
+                 
                         <li>
-                            <Link to ='/login'
-                                href="/"
-                                aria-label="Login"
-                                title="Login"
-                                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                            >
-                                Login
-                            </Link>
+                            
+
+                            {
+                                    user?.uid ?
+                                        <div className="flex items-center">
+                                            {user?.displayName}
+
+                                            {
+                                                user?.photoURL ?
+                                                    <img src={user?.photoURL} alt="" className="ml-5 w-10 h-10 rounded-full ring-2 ring-offset-4 dark:bg-gray-500 ring-violet-400 ring-offset-gray-800"
+                                                    />
+                                                    : <img className="w-10 h-10 rounded-full ring-2 ring-offset-4" src="https://toppng.com/uploads/preview/app-icon-set-login-icon-comments-avatar-icon-11553436380yill0nchdm.png" alt="" />
+                                            }
+                                            <button className="btn ml-4" >
+
+                                                <svg xmlns="http://www.w3.org/2000/svg" onClick={handelLogout} viewBox="0 0 512 512" className=" w-5 h-5 fill-current dark:text-gray-400">
+                                                    <path d="M440,424V88H352V13.005L88,58.522V424H16v32h86.9L352,490.358V120h56V456h88V424ZM320,453.642,120,426.056V85.478L320,51Z"></path>
+                                                    <rect width="32" height="64" x="256" y="232"></rect>
+                                                </svg>
+                                                Logout</button>
+
+                                        </div>
+                                        :
+                                        <>
+                                            <Link to='/register'
+
+                                                className="inline-flex items-center justify-center h-10 px-6 font-medium tracking-wide bg-red-500 text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none mr-5"
+                                                aria-label="Sign up"
+                                                title="Sign up"
+                                            >
+                                                Register
+                                            </Link>
+                                            <Link to='/login'
+
+                                                aria-label="Login"
+                                                title="Login"
+                                                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                                            >
+                                                Login
+                                            </Link>
+                                        </>
+                                }
+
                         </li>
                     </ul>
                     <div className="lg:hidden">
@@ -140,7 +158,7 @@ const Header = () => {
                                     <div className="flex items-center justify-between mb-4">
                                         <div>
                                             <a
-                                                href="/"
+
                                                 aria-label="Company"
                                                 title="Company"
                                                 className="inline-flex items-center"
@@ -185,7 +203,7 @@ const Header = () => {
                                         <ul className="space-y-4">
                                             <li>
                                                 <a
-                                                    href="/"
+
                                                     aria-label="Our product"
                                                     title="Our product"
                                                     className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
@@ -195,7 +213,7 @@ const Header = () => {
                                             </li>
                                             <li>
                                                 <a
-                                                    href="/"
+
                                                     aria-label="Our product"
                                                     title="Our product"
                                                     className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
@@ -205,7 +223,7 @@ const Header = () => {
                                             </li>
                                             <li>
                                                 <a
-                                                    href="/"
+
                                                     aria-label="Product pricing"
                                                     title="Product pricing"
                                                     className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
@@ -215,7 +233,7 @@ const Header = () => {
                                             </li>
                                             <li>
                                                 <a
-                                                    href="/"
+
                                                     aria-label="About us"
                                                     title="About us"
                                                     className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
@@ -232,7 +250,7 @@ const Header = () => {
                                             </li>
                                             <li>
                                                 <a
-                                                    href="/"
+
                                                     aria-label="About us"
                                                     title="About us"
                                                     className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
@@ -242,7 +260,7 @@ const Header = () => {
                                             </li>
                                             <li>
                                                 <a
-                                                    href="/"
+
                                                     aria-label="About us"
                                                     title="About us"
                                                     className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"

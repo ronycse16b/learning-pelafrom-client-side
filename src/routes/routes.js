@@ -5,7 +5,10 @@ import Home from "../components/Home/Home";
 import Login from '../components/LoginAsset/Login/Login';
 import Sideber from "../components/Sideber/Sideber";
 import Register from "../components/LoginAsset/Register/Register";
-import Banner from "../components/Banner/Banner";
+import CourseCategory from "../components/Course-Category/CourseCategory"
+
+import ProtectRoutes from "./ProtectRoutes";
+
 export const router = createBrowserRouter([
 
     {
@@ -27,22 +30,7 @@ export const router = createBrowserRouter([
                 path: '/login',
                 element: <Login></Login>,
             },
-            //  {
-
-            //            path:'/all-topices' ,
-            //            element:<Sideber></Sideber>,
-
-
-
-            //  },
-            //  {
-
-            //            path:'/all-topices/login' ,
-            //            element:<Login></Login>,
-
-
-
-            //  },
+           
             {
                 path: '/register',
                 element: <Register></Register>,
@@ -53,22 +41,27 @@ export const router = createBrowserRouter([
     },
 
     {
-        path: '/all-topices',
+        path: '/course-category',
 
-        element: <Sideber></Sideber>,
+        element: <ProtectRoutes><Sideber></Sideber></ProtectRoutes>,
         errorElement: <ErrorPage></ErrorPage>,
         children: [
 
             {
-                path: '/all-topices/login',
-                element: <Login></Login>,
+                path: '/course-category/:id',
+                element:  <CourseCategory></CourseCategory>,
+                loader: ({params})=> fetch(`http://localhost:5000/cousre-categories/${params.id}`)
 
             },
-            {
-                path: '/all-topices/register',
-                element: <Register></Register>,
+            // {
+            //     path: '/course-category/',
+            //     element: <Pricing></Pricing>,
+            //     loader: ({params})=> fetch(`http://localhost:5000/course/${params.id}`)
 
-            }
+            // },
+          
+         
+          
         ]
     }
 
