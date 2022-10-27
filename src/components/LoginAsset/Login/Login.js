@@ -8,11 +8,11 @@ const Login = () => {
             <form novalidate="" action="" className="space-y-6 ng-untouched ng-pristine ng-valid">
                 <div className="space-y-1 text-sm">
                     <label for="username" className="block text-black">Email</label>
-                    <input type="email" name="username" id="username" placeholder="Email write here.. " className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400" />
+                    <input type="email" name="username" id="username" placeholder="Email  " className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400" />
                 </div>
                 <div className="space-y-1 text-sm">
                     <label for="password" className="block text-black">Password</label>
-                    <input type="password" name="password" id="password" placeholder="Password write here.." className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400" />
+                    <input type="password" name="password" id="password" placeholder="Password w" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400" />
                     <div className="flex justify-end text-xs text-black">
                         <a rel="noopener noreferrer" href="#">Forgot Password?</a>
                     </div>
