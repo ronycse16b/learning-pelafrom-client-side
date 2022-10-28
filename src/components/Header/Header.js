@@ -71,7 +71,7 @@ const Header = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link
+                            <Link to="/blog"
 
                                 aria-label="Product pricing"
                                 title="Product pricing"
@@ -81,7 +81,7 @@ const Header = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link
+                            <Link to='/fq'
 
                                 aria-label="About us"
                                 title="About us"
@@ -230,7 +230,7 @@ const Header = () => {
                                                 </Link>
                                             </li>
                                             <li>
-                                                <Link
+                                                <Link to ='/blog'
 
                                                     aria-label="Product pricing"
                                                     title="Product pricing"
@@ -240,7 +240,7 @@ const Header = () => {
                                                 </Link>
                                             </li>
                                             <li>
-                                                <Link
+                                                <Link to='/fq'
 
                                                     aria-label="About us"
                                                     title="About us"

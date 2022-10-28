@@ -6,9 +6,10 @@ import Login from '../components/LoginAsset/Login/Login';
 import Sideber from "../components/Sideber/Sideber";
 import Register from "../components/LoginAsset/Register/Register";
 import CourseCategory from "../components/Course-Category/CourseCategory"
-
 import ProtectRoutes from "./ProtectRoutes";
 import Details from "../components/CourseDetails/Details";
+import Blog from "../components/Blog/Blog";
+import Faq from "../components/FAQ/Faq";
 
 export const router = createBrowserRouter([
 
@@ -30,6 +31,15 @@ export const router = createBrowserRouter([
             {
                 path: '/login',
                 element: <Login></Login>,
+            },
+            {
+                path: '/blog',
+                element: <Blog></Blog>,
+            },
+           
+            {
+                path: '/fq',
+                element: <Faq></Faq>,
             },
            
             {
@@ -62,12 +72,7 @@ export const router = createBrowserRouter([
 
             },
           
-            {
-                path: 'name',
-                element: <Details></Details>,
-               
-
-            },
+           
           
          
           
