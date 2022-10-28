@@ -48,17 +48,15 @@ export const Content = () => {
             </div>
             <div className="max-w-xl mb-6">
               <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
-                Let us handle
+              Today! Get Started
                 <br className="hidden md:block" />
-                your next{' '}
+                With  {' '}
                 <span className="inline-block text-deep-purple-accent-400">
-                  destination
+           Our Sepical Team
                 </span>
               </h2>
               <p className="text-base text-gray-700 md:text-lg">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                quae. explicabo.
+              We are specialized in logo making, business stationery design, and website development with so many satisfied customers all over the world. We are basically an IT-based creative design company as well as IT-based services such as Logo Design, Graphic Design, Web Design, and Software development services. Not only we are doing your design work but also developing your business. Moreover, we work on logos, s.
               </p>
             </div>
             <div>
@@ -82,19 +80,19 @@ export const Content = () => {
             <div className="flex flex-col items-end px-3">
               <img
                 className="object-cover mb-6 rounded shadow-lg h-28 sm:h-48 xl:h-56 w-28 sm:w-48 xl:w-56"
-                src="https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+                src="https://thumbs.dreamstime.com/b/office-mates-working-together-as-team-computer-creative-business-colleagues-discussing-work-laptop-computer-as-team-126801508.jpg"
                 alt=""
               />
               <img
                 className="object-cover w-20 h-20 rounded shadow-lg sm:h-32 xl:h-40 sm:w-32 xl:w-40"
-                src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+                src="https://www.westend61.de/images/0000932370pw/colleagues-working-together-at-desk-in-office-EBSF02486.jpg"
                 alt=""
               />
             </div>
             <div className="px-3">
               <img
                 className="object-cover w-40 h-40 rounded shadow-lg sm:h-64 xl:h-80 sm:w-64 xl:w-80"
-                src="https://images.pexels.com/photos/3182739/pexels-photo-3182739.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhx5WD1gTDoBM4Te6tYLhN771FA8uXw-Jrnn0LTxuwwIQsbPuNO-QweWXbQtzyfcj5guY&usqp=CAU"
                 alt=""
               />
             </div>

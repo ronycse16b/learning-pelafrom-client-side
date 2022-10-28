@@ -14,7 +14,7 @@ import Pricing from '../Pricing/Pricing';
 const Sideber = () => {
 
 	const [categories, setCategories] = useState([]);
-	console.log(categories);
+	
 	useEffect(() => {
 		fetch('http://localhost:5000/cousre-categories')
 			.then(res => res.json())

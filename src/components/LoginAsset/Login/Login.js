@@ -42,10 +42,11 @@ const Login = () => {
 
         providerLogin(googleProvider)
             .then(result => {
-                const user = result.user;
-                console.log(user);
+               
             })
-            .catch(error => console.error(error));
+            .catch(error => {
+                setError(error.message);
+            });
 
 
 
@@ -56,10 +57,12 @@ const Login = () => {
 
         gitProviderLogin(githunProvider)
             .then(result => {
-                const user = result.user;
-                console.log(user);
+                
+                
             })
-            .catch(error => console.error(error));
+            .catch(error => {
+                setError(error.message);
+            });
 
 
 

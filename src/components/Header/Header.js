@@ -31,7 +31,7 @@ const Header = () => {
 
     const handleThemeSwitch = () => {
         setTheme(theme === "dark" ? "light" : "dark");
-        console.log('button work');
+      
     }
 
     return (

@@ -1,11 +1,13 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 const Banner = () => {
   return (
     <div className="relative ">
       <img
-        src="https://images.pexels.com/photos/3747463/pexels-photo-3747463.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+        src="https://www.freecodecamp.org/news/content/images/2021/09/emily-bernal-v9vII5gV8Lw-unsplash.jpg"
         className="absolute inset-0 object-cover w-full h-full"
         alt=""
       />
@@ -14,14 +16,12 @@ const Banner = () => {
           <div className="flex flex-col items-center justify-between xl:flex-row">
             <div className="w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12">
               <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
-                The quick, brown fox <br className="hidden md:block" />
-                jumps over a{' '}
-                <span className="text-teal-accent-400">lazy dog</span>
+              Creating Professional and Dynamic   <br className="hidden md:block" />
+           
+                <span className="text-teal-accent-400">Graphics Design</span>
               </h2>
-              <p className="max-w-xl mb-4 text-base text-gray-400 md:text-lg">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudan, totam rem aperiam, eaque ipsa
-                quae.
+              <p className="max-w-xl mb-4 text-base text-gray-100 md:text-lg">
+              We are a professional team and offer creative and dynamic logo design services.
               </p>
               <button
                 className=" btn btn-outline outline-2 text-cyan-50 "
@@ -36,7 +36,7 @@ const Banner = () => {
                 </svg>
               </button>
 
-              <button className=' btn bg-red-600 ml-5'> Sign up Here</button>
+              <Link to='/register' className=' btn bg-red-600 ml-5'> Sign up Here</Link>
             </div>
             <div className="w-full max-w-xl xl:px-8 xl:w-5/12  2xl:py-72">
 

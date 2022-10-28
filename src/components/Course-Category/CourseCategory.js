@@ -28,7 +28,7 @@ const CourseCategory = () => {
                         </svg>
                     </div>
                     <div className="flex flex-col justify-center p-8 bg-white lg:p-16 lg:pl-10 lg:w-1/2">
-                        <small>{students}</small>
+                        <small className='text-zinc-900 font-bold'> Total Student : {students}</small>
                         <h5 className="mb-3 text-3xl font-extrabold leading-none sm:text-4xl">
                             {course_name}
                         </h5>
