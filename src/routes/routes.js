@@ -64,13 +64,13 @@ export const router = createBrowserRouter([
             {
                 path: '/course-category/:id',
                 element: <CourseCategory></CourseCategory>,
-                loader: ({ params }) => fetch(`http://localhost:5000/cousre-categories/${params.id}`)
+                loader: ({ params }) => fetch(`https://b610-lerning-platform-server-side-ronycse16b.vercel.app/cousre-categories/${params.id}`)
 
             },
             {
                 path: '/course-category/course/:id',
                 element: <ProtectRoutes><Details></Details></ProtectRoutes>,
-                loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
+                loader: ({ params }) => fetch(`https://b610-lerning-platform-server-side-ronycse16b.vercel.app/course/${params.id}`)
 
             },
 

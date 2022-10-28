@@ -16,7 +16,7 @@ const Sideber = () => {
 	const [categories, setCategories] = useState([]);
 	
 	useEffect(() => {
-		fetch('http://localhost:5000/cousre-categories')
+		fetch('https://b610-lerning-platform-server-side-ronycse16b.vercel.app/cousre-categories')
 			.then(res => res.json())
 			.then(data => setCategories(data))
 
