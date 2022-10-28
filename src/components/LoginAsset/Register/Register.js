@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useContext } from 'react';
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 
 
 const Register = () => {
-    const {createUser} =useContext(AuthContext)
-
+    const {createUser,updateUserProfile} =useContext(AuthContext)
+    const [error,setError]= useState('');
 
     const formSubmitRegister= event =>{
 
@@ -23,10 +23,25 @@ const Register = () => {
         createUser(email,password)
         .then(result => {
             const user= result.user;
-            console.log(user);
+            handelUpdateUser(name,photoUrl)
             form.reset()
+            setError('')
+          
         })
-        .catch(err => console.error(err));
+        .catch(error => {
+            setError(error.message);
+        });
+    }
+
+    const handelUpdateUser = (name,photoUrl) => {
+          const profile = {
+            displayName:name,
+            photoURL:photoUrl,
+          }
+        updateUserProfile(profile)
+        .than(()=>{})
+        .catch(()=>{})
+
     }
 
     
@@ -35,6 +50,7 @@ const Register = () => {
             <div className='py-16'>
           <div className="w-full max-w-md p-8 space-y-3 rounded-xl  text-black mx-auto border shadow-lg">
             <h1 className="text-2xl font-bold text-center">Sign Up Page</h1>
+            <span className='text-red-600 font-bold'>{error}</span>
             <form  onSubmit={formSubmitRegister} className="space-y-6 ng-untouched ng-pristine ng-valid">
                 <div className="space-y-1 text-sm">
                     <label htmlFor="username" className="block text-black">Name</label>
