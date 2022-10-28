@@ -8,6 +8,7 @@ import Register from "../components/LoginAsset/Register/Register";
 import CourseCategory from "../components/Course-Category/CourseCategory"
 
 import ProtectRoutes from "./ProtectRoutes";
+import Pricing from "../components/Pricing/Pricing";
 
 export const router = createBrowserRouter([
 
@@ -47,6 +48,7 @@ export const router = createBrowserRouter([
         errorElement: <ErrorPage></ErrorPage>,
         children: [
 
+        
             {
                 path: '/course-category/:id',
                 element:  <CourseCategory></CourseCategory>,

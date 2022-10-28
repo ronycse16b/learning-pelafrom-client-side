@@ -7,7 +7,7 @@ import Sideber from '../components/Sideber/Sideber';
 
 const Main = () => {
     return (
-        <div>
+        <div className='dark:bg-black dark:text-slate-50'>
             <Header></Header>
               <Outlet ></Outlet>
             

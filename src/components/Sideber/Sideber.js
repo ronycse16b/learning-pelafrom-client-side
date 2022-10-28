@@ -4,6 +4,8 @@ import { Outlet } from "react-router-dom";
 import Header from '../Header/Header';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import Pricing from '../Pricing/Pricing';
+
 
 
 
@@ -31,9 +33,10 @@ const Sideber = () => {
 					</div>
 					<div className="lg:w-3/4  dark:bg-gray-800">
 						<div className="flex items-center justify-center ">
-							<Outlet>
+			
 
-								
+							   
+							<Outlet>
 							</Outlet>
 					
 						</div>
