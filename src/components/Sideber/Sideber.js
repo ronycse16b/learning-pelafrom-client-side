@@ -31,7 +31,7 @@ const Sideber = () => {
 							categories.map(category => <Link key={category.id} className="btn bg-slate-100 text-black hover:bg-red-600 hover:text-white" to={`/course-category/${category.id}`} rel="noopener noreferrer" href="#">{category.name}</Link>
 							)}
 					</div>
-					<div className="lg:w-3/4  dark:bg-gray-800">
+					   <div className="lg:w-3/4  dark:bg-gray-800">
 						<div className="flex items-center justify-center ">
 			
 

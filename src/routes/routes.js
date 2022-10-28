@@ -8,7 +8,7 @@ import Register from "../components/LoginAsset/Register/Register";
 import CourseCategory from "../components/Course-Category/CourseCategory"
 
 import ProtectRoutes from "./ProtectRoutes";
-import Pricing from "../components/Pricing/Pricing";
+import Details from "../components/CourseDetails/Details";
 
 export const router = createBrowserRouter([
 
@@ -44,7 +44,7 @@ export const router = createBrowserRouter([
     {
         path: '/course-category',
 
-        element: <ProtectRoutes><Sideber></Sideber></ProtectRoutes>,
+        element: <Sideber></Sideber>,
         errorElement: <ErrorPage></ErrorPage>,
         children: [
 
@@ -55,12 +55,19 @@ export const router = createBrowserRouter([
                 loader: ({params})=> fetch(`http://localhost:5000/cousre-categories/${params.id}`)
 
             },
-            // {
-            //     path: '/course-category/',
-            //     element: <Pricing></Pricing>,
-            //     loader: ({params})=> fetch(`http://localhost:5000/course/${params.id}`)
+            {
+                path: '/course-category/course/:id',
+                element: <ProtectRoutes><Details></Details></ProtectRoutes>,
+                loader: ({params})=> fetch(`http://localhost:5000/course/${params.id}`)
 
-            // },
+            },
+          
+            {
+                path: 'name',
+                element: <Details></Details>,
+               
+
+            },
           
          
           

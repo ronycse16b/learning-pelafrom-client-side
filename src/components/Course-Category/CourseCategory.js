@@ -34,34 +34,13 @@ const CourseCategory = () => {
                         </h5>
 
                         {
-                            details.length > 200 ? <p className="mb-5 text-gray-800">{details.slice(0, 250) + '...'}</p> :
+                            details.length > 200 ? <p className="mb-5 text-gray-800">{details.slice(0, 250) + '...'}  <br /> <br /> <Link to={`/course-category/course/${_id}`} className='btn'>Get Primium Acces</Link></p> :
                                 <p> {details}</p>
+                              
                         }
 
-                        {/* The button to open modal */}
-                        <label htmlFor="my-modal-5" className="btn modal-button">Show Details</label>
-
-                        {/* Put this part before </body> tag */}
-                        <input type="checkbox" id="my-modal-5" className="modal-toggle" />
-                        <div className="modal">
-                            <div className="modal-box w-11/12 max-w-5xl">
-                            <img
-                            src={image_url}
-                            alt=""
-                            className=""
-                        />
-                                <h3 className="font-bold text-lg">{course_name}</h3>
-                                <p className="py-4">{details}</p>
-                                 <div className='flex justify-between items-center'>
-                                 <p className="py-4 font-bold"> Student:{students}</p>
-                                <p className="py-4 font-bold"> Student Rating:{rating.number}</p>
-                                 </div>
-                                
-                                <div className="modal-action">
-                                    <label htmlFor="my-modal-5" className="btn">Yay!</label>
-                                </div>
-                            </div>
-                        </div>
+               
+                      
 
                    
                     </div>
