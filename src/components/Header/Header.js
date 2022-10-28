@@ -31,7 +31,7 @@ const Header = () => {
 
     const handleThemeSwitch = () => {
         setTheme(theme === "dark" ? "light" : "dark");
-      
+
     }
 
     return (
@@ -97,18 +97,18 @@ const Header = () => {
                             {
                                 user?.uid ?
                                     <div className="flex items-center">
-                                       <span className="font-bold">{user?.displayName}</span> 
+                                        <span className="font-bold">{user?.displayName}</span>
                                         <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
-                                        {
-                                            user?.photoURL ?
-                                               
+                                            {
+                                                user?.photoURL ?
+
                                                     <img src={user?.photoURL} alt="" className=" tooltip  ml-5 w-10 h-10 rounded-full ring-2 ring-offset-4 dark:bg-gray-500 ring-violet-400 ring-offset-gray-800" data-tip="hello asgh;ljkhjhfddf"
                                                     />
                                                     : <img className="w-10 h-10 rounded-full ring-2 ring-offset-4" src="https://toppng.com/uploads/preview/app-icon-set-login-icon-comments-avatar-icon-11553436380yill0nchdm.png" alt="" />
-                                           
-                                               
-                                        }
-                                             </div>
+
+
+                                            }
+                                        </div>
                                         <button className="btn ml-4" onClick={handelLogout} >
 
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className=" w-5 h-5 fill-current dark:text-gray-400">
@@ -185,9 +185,9 @@ const Header = () => {
                                                 title="Company"
                                                 className="inline-flex items-center"
                                             >
-                                                  
+
                                                 <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                                                   E-Graphices IT
+                                                    E-Graphices IT
                                                 </span>
                                             </a>
                                         </div>
@@ -230,7 +230,7 @@ const Header = () => {
                                                 </Link>
                                             </li>
                                             <li>
-                                                <Link to ='/blog'
+                                                <Link to='/blog'
 
                                                     aria-label="Product pricing"
                                                     title="Product pricing"

@@ -36,12 +36,12 @@ export const router = createBrowserRouter([
                 path: '/blog',
                 element: <Blog></Blog>,
             },
-           
+
             {
                 path: '/fq',
                 element: <Faq></Faq>,
             },
-           
+
             {
                 path: '/register',
                 element: <Register></Register>,
@@ -51,6 +51,8 @@ export const router = createBrowserRouter([
 
     },
 
+    // Course route sapareted 
+
     {
         path: '/course-category',
 
@@ -58,24 +60,24 @@ export const router = createBrowserRouter([
         errorElement: <ErrorPage></ErrorPage>,
         children: [
 
-        
+
             {
                 path: '/course-category/:id',
-                element:  <CourseCategory></CourseCategory>,
-                loader: ({params})=> fetch(`http://localhost:5000/cousre-categories/${params.id}`)
+                element: <CourseCategory></CourseCategory>,
+                loader: ({ params }) => fetch(`http://localhost:5000/cousre-categories/${params.id}`)
 
             },
             {
                 path: '/course-category/course/:id',
                 element: <ProtectRoutes><Details></Details></ProtectRoutes>,
-                loader: ({params})=> fetch(`http://localhost:5000/course/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
 
             },
-          
-           
-          
-         
-          
+
+
+
+
+
         ]
     }
 

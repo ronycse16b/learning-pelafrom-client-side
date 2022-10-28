@@ -8,6 +8,8 @@ const Register = () => {
     const { createUser, updateUserProfile } = useContext(AuthContext)
     const [error, setError] = useState('');
 
+
+    // form data geting
     const formSubmitRegister = event => {
 
         event.preventDefault();
@@ -32,6 +34,8 @@ const Register = () => {
                 setError(error.message);
             });
     }
+
+// user data updated function
 
     const handelUpdateUser = (name, photoUrl) => {
         const profile = {

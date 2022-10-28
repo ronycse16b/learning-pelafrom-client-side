@@ -12,6 +12,7 @@ const Login = () => {
     const githunProvider = new GithubAuthProvider()
 
 
+    // email password sign in function
     const signInfromHandel = event => {
 
 
@@ -37,12 +38,12 @@ const Login = () => {
 
     }
 
-
+// google popup sign in function 
     const handelGoogleSignin = () => {
 
         providerLogin(googleProvider)
             .then(result => {
-               
+
             })
             .catch(error => {
                 setError(error.message);
@@ -53,12 +54,13 @@ const Login = () => {
 
 
     }
+    // git hub popup sign in function 
     const handelGithubSignin = () => {
 
         gitProviderLogin(githunProvider)
             .then(result => {
-                
-                
+
+
             })
             .catch(error => {
                 setError(error.message);
