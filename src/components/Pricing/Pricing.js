@@ -23,8 +23,7 @@ const {name, image_url} = cata;
 					{name}
 				</a>
 				<p className="mb-2 text-gray-700">
-					Sed ut perspiciatis unde omnis iste natus error sit sed quia
-					consequuntur magni voluptatem doloremque.
+				Adobe Premiere Pro is a timeline-based and non-linear video editing software application developed by Adobe Inc. and published as part of the Adobe Creative Cloud licensing program. First launched in
 				</p>
 				
 			</div>
